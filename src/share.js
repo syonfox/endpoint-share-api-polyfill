@@ -430,7 +430,7 @@ navigator.share = navigator.share || (function(){
 								break;
 							}
 							case 'email': {
-								window.open("mailto:"+''+'?subject='+encodeURIComponent(title)+'&body='+encodeURIComponent(payload);
+								window.open("mailto:"+''+'?subject='+encodeURIComponent(title)+'&body='+encodeURIComponent(payload));
 								break;
 							}
 							case 'sms': {
