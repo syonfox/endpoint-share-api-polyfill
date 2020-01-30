@@ -419,7 +419,7 @@ navigator.share = navigator.share || (function(){
 			function bindEvents () {
 				Array.from(container.querySelectorAll('.tool-icon')).forEach(tool => {
 					tool.addEventListener('click', event => {
-            const payload = text + ': ' + url;
+            const payload = text + ' : ' + url;
 						switch (tool.dataset.tool) {
 							case 'copy': {
 								navigator.clipboard.writeText(url);
@@ -430,12 +430,12 @@ navigator.share = navigator.share || (function(){
 								break;
 							}
 							case 'email': {
-								window.open("mailto:"+''+'?subject='+title+'&body='+url);
+								window.open("mailto:"+''+'?subject='+encodeURIComponent(title)+'&body='+encodeURIComponent(payload);
 								break;
 							}
 							case 'sms': {
 								// window.open(toolsUrls.sms(title + ': \n' + url));
-								location.href = `sms:${language.selectSms}?&body=${title}: ${url}`;
+								location.href = `sms:${language.selectSms}?&body=${encodeURIComponent(payload)}`;
 								// window.open("sms:"+''+'?subject='+title+'&body='+url);
 								break;
 							}
@@ -447,29 +447,29 @@ navigator.share = navigator.share || (function(){
 										'&href=' + encodeURIComponent(url) +
 										'&link=' + encodeURIComponent(url) +
 										'&redirect_uri=' + encodeURIComponent(url) +
-										'&quote=' + title + ': ' + url
+										'&quote=' + encodeURIComponent(title) + ': ' + encodeURIComponent(url)
 								);
 
 								break;
 							}
 							case 'facebook': {
-								window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}&quote=${text}`);
+								window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}&quote=${encodeURIComponent(text)}`);
 								break;
 							}
 							case 'whatsapp': {
-								window.open((isDesktop ? 'https://api.whatsapp.com/send?text=' : 'whatsapp://send?text=') + payload);
+								window.open((isDesktop ? 'https://api.whatsapp.com/send?text=' : 'whatsapp://send?text=') + encodeURIComponent(payload));
 								break;
 							}
 							case 'twitter': {
-								window.open(`http://twitter.com/share?text=${text}&url=${url}&hashtags=${hashtags || ''}`);
+								window.open(`http://twitter.com/share?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}&hashtags=${hashtags || ''}`);
 								break;
               }
 							case 'linkedin': {
-								window.open(`https://www.linkedin.com/shareArticle?mini=true&url=${url}&title=${title}&summary=${text}&source=LinkedIn`);
+								window.open(`https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(url)}&title=${encodeURIComponent(title)}&summary=${encodeURIComponent(text)}&source=LinkedIn`);
 								break;
 							}
 							case 'telegram': {
-								window.open((isDesktop ? 'https://telegram.me/share/msg?url='+url+'&text=' + text: 'tg://msg?text=' + payload));
+								window.open((isDesktop ? 'https://telegram.me/share/msg?url='+encodeURIComponent(url)+'&text=' + encodeURIComponent(text): 'tg://msg?text=' + encodeURIComponent(payload)));
 								break;
 							}
 						}
