@@ -124,7 +124,7 @@ navigator.share = navigator.share || (function(){
 				reject('Invalid Params');
 			}
 
-      const { title, url, fbId, hashtags } = data;
+      let { title, url, fbId, hashtags } = data;
       const configs = { ...{
           copy: true,
           print: true,
@@ -419,10 +419,16 @@ navigator.share = navigator.share || (function(){
 			function bindEvents () {
 				Array.from(container.querySelectorAll('.tool-icon')).forEach(tool => {
 					tool.addEventListener('click', event => {
-            const payload = text + ' : ' + url;
+            if(!url && text) {
+              const res = text.split("\n").join('').match(/\b(http|https):\/\/(\S*)\b/ig)
+              if(res) {
+                url = res[0]
+              }
+            }
+            const payload = text.includes(url) ? text : text + ' : ' + url;
 						switch (tool.dataset.tool) {
 							case 'copy': {
-								navigator.clipboard.writeText(url);
+								navigator.clipboard.writeText(payload);
 								break;
 							}
 							case 'print': {
@@ -447,7 +453,7 @@ navigator.share = navigator.share || (function(){
 										'&href=' + encodeURIComponent(url) +
 										'&link=' + encodeURIComponent(url) +
 										'&redirect_uri=' + encodeURIComponent(url) +
-										'&quote=' + encodeURIComponent(title) + ': ' + encodeURIComponent(url)
+										'&quote=' + encodeURIComponent(title+': '+url)
 								);
 
 								break;
