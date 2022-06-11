@@ -23,6 +23,8 @@ You can also install it using npm:
 
 ```sh
 npm install share-api-polyfill --save
+
+
 # or
 yarn add share-api-polyfill
 ```
@@ -103,9 +105,9 @@ Example:
 
 ```js
 navigator.share({
-    title: 'Web Share API Polyfill',
-    text: 'A polyfill for the Share API. Use it to share in both desktops and mobile devices.',
-    url: location.href,
+  title: 'Web Share API Polyfill',
+  text: 'A polyfill for the Share API. Use it to share in both desktops and mobile devices.',
+  url: location.href,
 
     fbId: '123456789123456',
     hashtags: 'javascript,shareAPI,polyfill'
@@ -159,6 +161,13 @@ npm run demo
 
 Also, if you need to change the icons, they are SVGs located on the share.js script.
 You will find the oridinal vector (.svg) in the src/icons directory in case you want to change it and copy the svg code.
+
+## Donate ❤️
+
+Buy us a coffee :)
+
+BTC: 1GuTME1bGbk7hY7ssrUBh3M1k4AeyVCSjW<br/>
+ETH: 0x49f1612d4a8e9165f2eb94be79af9dbbf3815af5
 
 ## Donate ❤️
 

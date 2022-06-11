@@ -4,14 +4,15 @@
   "displayName": "On2 & Nasc Share API Polyfill",
   "description": "This is a polyfill for the `Web Share API` that can be used in desktop too, so your users can share in their twitter, facebook, messenger, linkedin, sms, e-mail, print, telegram or whatsapp.",
   "scripts": {
-    "demo": "npm run build && live-server --open=/demo/",
+    "demo": "npm run build && live-server  --open=/demo/",
     "live-server": "live-server demo/",
     "prepublish": "npm run build",
     "clean": "rm dist/bundle.js",
     "security": "npx audit-ci --high --skip-dev",
     "build": "npm run build-dev && npm run build-prod",
     "build-dev": "webpack --devtool source-map --mode development",
-    "build-prod": "webpack --mode production"
+    "build-prod": "webpack --mode production",
+    "docs": "jsdoc  -R ./README.md -d ./docs ./src/*"
   },
   "main": "dist/share-min.js",
   "repository": {
@@ -27,7 +28,7 @@
     "share api polyfill",
     "share-api-polyfill"
   ],
-  "author": "NascHQ",
+  "author": "NascHQ, Syonfox",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/on2-dev/share-api-polyfill/issues"
@@ -41,9 +42,13 @@
     "babel-loader": "^8.1.0",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "glob-parent": "^6.0.2",
+    "jsdoc": "^3.6.10",
     "live-server": "^1.2.1",
     "merge2": "^1.4.1",
     "webpack": "^5.7.0",
     "webpack-cli": "^4.9.0"
+  },
+  "dependencies": {
+    "regenerator-runtime": "^0.13.9"
   }
 }
