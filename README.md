@@ -1,6 +1,6 @@
 # Share API Polyfill
 
-This is a (6kb) polyfill for the `Web Share API` that can be used in desktop too, so your users can share in their twitter, facebook, messenger, linkedin, sms, e-mail, print, telegram or whatsapp.
+This is a (30kb) polyfill for the `Web Share API` that can be used in desktop too, so your users can share in their twitter, facebook, messenger, linkedin, sms, e-mail, print, telegram or whatsapp.
 
 It also supports multilanguage ([see the list of languages](#multi-language) and you can help us with that :) ).
 
@@ -9,6 +9,13 @@ This is a very simple, single file import polyfill.
 ![JavaScript Share API Polyfill in a Browser](https://github.com/on2-dev/share-api-polyfill/blob/master/demo/demo.gif?raw=true)  
 [see the share api polyfill in action](https://on2-dev.github.io/share-api-polyfill/demo/)
 
+# 
+
+New demos/ site
+
+[New Demo Page](https://syonfox.github.io/share-api-polyfill/demo)
+
+[New Docs Page](https://syonfox.github.io/share-api-polyfill/docs)
 ## Installing it:
 
 Just import it like so:
@@ -35,7 +42,7 @@ Here, check this demo and see the [share api polyfill in action](https://on2-dev
 
 ## The Share API
 
-The oficial share api works like this:
+The official share api works like this:
 
 ```js
 navigator.share({
@@ -48,7 +55,11 @@ navigator.share({
 ```
 
 But in this case, you can also pass your `Facebook App Id` to enable sharing with **messenger**.
-Also, you can pass in a list of hashtags to be used when sharing with twitter or facebook. Only one hashtag can be shared with facebook so the first one in the list will be shared.
+Also, you can pass in a list of hash_tags to be used when sharing with twitter or facebook. Only one hashtag can be shared with facebook so the first one in the list will be shared.
+
+[See the docs on ShareTarget](https://syonfox.github.io/share-api-polyfill/docs/ShareTarget.html)
+For more information on extended capabilities
+
 
 ```js
 navigator.share({
@@ -57,21 +68,27 @@ navigator.share({
   url: location.href,
 
   // extra, optional options
-  fbId: '123456789123456',
-  hashtags: ['javascript', 'shareAPI', 'Polyfill']
+  app_id: '123456789123456',// required for mesanger
+  hash_tags: ['javascript', 'shareAPI', 'Polyfill'],
+  via: 'tweiter_username',
+  desc: 'basical text',
+  email_address, cc_email_address, bcc_email_address, phone_number,
+  // redirect... etc the idea is you should be able to do anything
+  
 })
 .then( _ => console.log('Yay, you shared it :)'))
 .catch( error => console.log('Oh noh! You couldn\'t share it! :\'(\n', error));
 ```
+> You can disable a ShareTarget by setting its name === false in the share options 
 
-> You can pass the hashtags as a single (comma separated) string, or as an array.
+> You can pass the hash_tags as a single (comma separated) string, or as an array.
 
 ### Multi language
 
 It will try and use the supported languages based on user's `browser language` configuration.  
-If the language is not found, it will uses a fallback (default english).
+If the language is not found, it will use a fallback (default english).
 
-Currently supported languages:
+Currently, supported languages:
 
 - cs
 - de
@@ -159,8 +176,16 @@ And try it locally
 npm run demo
 ```
 
+
+And build the docs
+```sh
+npm run docs
+```
+
 Also, if you need to change the icons, they are SVGs located on the share.js script.
 You will find the oridinal vector (.svg) in the src/icons directory in case you want to change it and copy the svg code.
+I have added a few more icons, but sadly bookmarks don't work without a extension.
+Help wanted for a more flexible icon system. but i ❤️ svg so.
 
 ## Donate ❤️
 
@@ -169,9 +194,4 @@ Buy us a coffee :)
 BTC: 1GuTME1bGbk7hY7ssrUBh3M1k4AeyVCSjW<br/>
 ETH: 0x49f1612d4a8e9165f2eb94be79af9dbbf3815af5
 
-## Donate ❤️
 
-Buy us a coffee :)
-
-BTC: 1GuTME1bGbk7hY7ssrUBh3M1k4AeyVCSjW<br/>
-ETH: 0x49f1612d4a8e9165f2eb94be79af9dbbf3815af5
