@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Home</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Home</h1>
+
+    
+
+
+
+    
+
+
+    <h3> </h3>
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+    <section>
+        <article><h1>Share API Polyfill</h1>
+<p>This is a (6kb) polyfill for the <code>Web Share API</code> that can be used in desktop too, so your users can share in their twitter, facebook, messenger, linkedin, sms, e-mail, print, telegram or whatsapp.</p>
+<p>It also supports multilanguage (<a href="#multi-language">see the list of languages</a> and you can help us with that :) ).</p>
+<p>This is a very simple, single file import polyfill.</p>
+<p><img src="https://github.com/on2-dev/share-api-polyfill/blob/master/demo/demo.gif?raw=true" alt="JavaScript Share API Polyfill in a Browser"><br>
+<a href="https://on2-dev.github.io/share-api-polyfill/demo/">see the share api polyfill in action</a></p>
+<h2>Installing it:</h2>
+<p>Just import it like so:</p>
+<pre class="prettyprint source lang-html"><code>&lt;script src=&quot;https://unpkg.com/share-api-polyfill/dist/share-min.js&quot;>&lt;/script>
+</code></pre>
+<blockquote>
+<p>Note that we are using the unpkg cdn to load it, you could also save it in your own structure so you can cache it with service workers and have it &quot;close&quot; to your own domain.</p>
+</blockquote>
+<p>You can also install it using npm:</p>
+<pre class="prettyprint source lang-sh"><code>npm install share-api-polyfill --save
+
+
+# or
+yarn add share-api-polyfill
+</code></pre>
+<p>Now, it will use the native share panel if it is available (only available on mobile devices) and, if not, it will enable an HTML structure in your page showing options for your users.</p>
+<p>Here, check this demo and see the <a href="https://on2-dev.github.io/share-api-polyfill/demo/">share api polyfill in action</a>.</p>
+<h2>The Share API</h2>
+<p>The oficial share api works like this:</p>
+<pre class="prettyprint source lang-js"><code>navigator.share({
+  title: 'Web Share API Polyfill',
+  text: 'A polyfill for the Share API. Use it to share in both desktops and mobile devices.',
+  url: location.href
+})
+.then( _ => console.log('Yay, you shared it :)'))
+.catch( error => console.log('Oh noh! You couldn\'t share it! :\'(\n', error));
+</code></pre>
+<p>But in this case, you can also pass your <code>Facebook App Id</code> to enable sharing with <strong>messenger</strong>.
+Also, you can pass in a list of hashtags to be used when sharing with twitter or facebook. Only one hashtag can be shared with facebook so the first one in the list will be shared.</p>
+<pre class="prettyprint source lang-js"><code>navigator.share({
+  title: 'Web Share API Polyfill',
+  text: 'A polyfill for the Share API. Use it to share in both desktops and mobile devices.',
+  url: location.href,
+
+  // extra, optional options
+  fbId: '123456789123456',
+  hashtags: ['javascript', 'shareAPI', 'Polyfill']
+})
+.then( _ => console.log('Yay, you shared it :)'))
+.catch( error => console.log('Oh noh! You couldn\'t share it! :\'(\n', error));
+</code></pre>
+<blockquote>
+<p>You can pass the hashtags as a single (comma separated) string, or as an array.</p>
+</blockquote>
+<h3>Multi language</h3>
+<p>It will try and use the supported languages based on user's <code>browser language</code> configuration.<br>
+If the language is not found, it will uses a fallback (default english).</p>
+<p>Currently supported languages:</p>
+<ul>
+<li>cs</li>
+<li>de</li>
+<li>it</li>
+<li>da</li>
+<li>en</li>
+<li>es</li>
+<li>fr</li>
+<li>hu</li>
+<li>is</li>
+<li>ja</li>
+<li>ko</li>
+<li>nl</li>
+<li>ta</li>
+<li>pl</li>
+<li>pt</li>
+<li>ru</li>
+<li>sv</li>
+<li>sk</li>
+<li>tr</li>
+<li>zh</li>
+</ul>
+<blockquote>
+<p>Feel free to contribute with more languages sending Pull Requests for them :)</p>
+</blockquote>
+<h3>Turning features off, in Desktop</h3>
+<p>You can disable some of the social buttons from the tool by passing a second object as argument.<br>
+As your mobile device will probably have native support for the share API, it will be ignored, being applied only for desktops.</p>
+<p>Example:</p>
+<pre class="prettyprint source lang-js"><code>navigator.share({
+  title: 'Web Share API Polyfill',
+  text: 'A polyfill for the Share API. Use it to share in both desktops and mobile devices.',
+  url: location.href,
+
+    fbId: '123456789123456',
+    hashtags: 'javascript,shareAPI,polyfill'
+  },
+  {
+    // change this configurations to hide specific unnecessary icons
+    copy: true,
+    email: true,
+    print: true,
+    sms: true,
+    messenger: true,
+    facebook: true,
+    whatsapp: true,
+    twitter: true,
+    linkedin: true,
+    telegram: true,
+    skype: true,
+    pinterest: true,
+    language: 'pt' // specify the default language
+  }
+)
+  .then( _ => console.log('Yay, you shared it :)'))
+  .catch( error => console.log('Oh noh! You couldn\'t share it! :\'(\n', error));
+</code></pre>
+<blockquote>
+<p>If you disable Skype, it will no longer load Skype's SDK, what might be something you want, in case you would like to improve the privacy in your project, avoiding loading <strong>third party libraries</strong>.</p>
+</blockquote>
+<h2>It's open source</h2>
+<p>Yup, it's open source and you can contribute to it :)</p>
+<p>Please refer to our <a href="https://github.com/on2-dev/share-api-polyfill/blob/master/CONTRIBUTING.md">CONTRIBUTING.md</a> and help us improve this tool.</p>
+<p>To re-build id, just install the dependencies:</p>
+<pre class="prettyprint source lang-sh"><code>npm install
+</code></pre>
+<p>And build it with gulp</p>
+<pre class="prettyprint source lang-sh"><code>npm run build
+</code></pre>
+<p>And try it locally</p>
+<pre class="prettyprint source lang-sh"><code>npm run demo
+</code></pre>
+<p>Also, if you need to change the icons, they are SVGs located on the share.js script.
+You will find the oridinal vector (.svg) in the src/icons directory in case you want to change it and copy the svg code.</p>
+<h2>Donate ❤️</h2>
+<p>Buy us a coffee :)</p>
+<p>BTC: 1GuTME1bGbk7hY7ssrUBh3M1k4AeyVCSjW<br/>
+ETH: 0x49f1612d4a8e9165f2eb94be79af9dbbf3815af5</p>
+<h2>Donate ❤️</h2>
+<p>Buy us a coffee :)</p>
+<p>BTC: 1GuTME1bGbk7hY7ssrUBh3M1k4AeyVCSjW<br/>
+ETH: 0x49f1612d4a8e9165f2eb94be79af9dbbf3815af5</p></article>
+    </section>
+
+
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="SharePolyfill.html">SharePolyfill</a></li><li><a href="ShareTarget.html">ShareTarget</a></li></ul><h3>Global</h3><ul><li><a href="global.html#sharePolyfill">sharePolyfill</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.10</a> on Sat Jun 11 2022 06:34:22 GMT-0700 (Pacific Daylight Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
