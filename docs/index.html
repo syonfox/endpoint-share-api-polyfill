@@ -44,11 +44,12 @@
 
     <section>
         <article><h1>Share API Polyfill</h1>
-<p>This is a (6kb) polyfill for the <code>Web Share API</code> that can be used in desktop too, so your users can share in their twitter, facebook, messenger, linkedin, sms, e-mail, print, telegram or whatsapp.</p>
+<p>This is a (30kb) polyfill for the <code>Web Share API</code> that can be used in desktop too, so your users can share in their twitter, facebook, messenger, linkedin, sms, e-mail, print, telegram or whatsapp.</p>
 <p>It also supports multilanguage (<a href="#multi-language">see the list of languages</a> and you can help us with that :) ).</p>
 <p>This is a very simple, single file import polyfill.</p>
 <p><img src="https://github.com/on2-dev/share-api-polyfill/blob/master/demo/demo.gif?raw=true" alt="JavaScript Share API Polyfill in a Browser"><br>
 <a href="https://on2-dev.github.io/share-api-polyfill/demo/">see the share api polyfill in action</a></p>
+<h1></h1>
 <p>New demos/ site</p>
 <p><a href="https://syonfox.github.io/share-api-polyfill/demo">New Demo Page</a></p>
 <p><a href="https://syonfox.github.io/share-api-polyfill/docs">New Docs Page</a></p>
@@ -69,7 +70,7 @@ yarn add share-api-polyfill
 <p>Now, it will use the native share panel if it is available (only available on mobile devices) and, if not, it will enable an HTML structure in your page showing options for your users.</p>
 <p>Here, check this demo and see the <a href="https://on2-dev.github.io/share-api-polyfill/demo/">share api polyfill in action</a>.</p>
 <h2>The Share API</h2>
-<p>The oficial share api works like this:</p>
+<p>The official share api works like this:</p>
 <pre class="prettyprint source lang-js"><code>navigator.share({
   title: 'Web Share API Polyfill',
   text: 'A polyfill for the Share API. Use it to share in both desktops and mobile devices.',
@@ -79,26 +80,36 @@ yarn add share-api-polyfill
 .catch( error => console.log('Oh noh! You couldn\'t share it! :\'(\n', error));
 </code></pre>
 <p>But in this case, you can also pass your <code>Facebook App Id</code> to enable sharing with <strong>messenger</strong>.
-Also, you can pass in a list of hashtags to be used when sharing with twitter or facebook. Only one hashtag can be shared with facebook so the first one in the list will be shared.</p>
+Also, you can pass in a list of hash_tags to be used when sharing with twitter or facebook. Only one hashtag can be shared with facebook so the first one in the list will be shared.</p>
+<p><a href="https://syonfox.github.io/share-api-polyfill/docs/ShareTarget.html">See the docs on ShareTarget</a>
+For more information on extended capabilities</p>
 <pre class="prettyprint source lang-js"><code>navigator.share({
   title: 'Web Share API Polyfill',
   text: 'A polyfill for the Share API. Use it to share in both desktops and mobile devices.',
   url: location.href,
 
   // extra, optional options
-  fbId: '123456789123456',
-  hashtags: ['javascript', 'shareAPI', 'Polyfill']
+  app_id: '123456789123456',// required for mesanger
+  hash_tags: ['javascript', 'shareAPI', 'Polyfill'],
+  via: 'tweiter_username',
+  desc: 'basical text',
+  email_address, cc_email_address, bcc_email_address, phone_number,
+  // redirect... etc the idea is you should be able to do anything
+  
 })
 .then( _ => console.log('Yay, you shared it :)'))
 .catch( error => console.log('Oh noh! You couldn\'t share it! :\'(\n', error));
 </code></pre>
 <blockquote>
-<p>You can pass the hashtags as a single (comma separated) string, or as an array.</p>
+<p>You can disable a ShareTarget by setting its name === false in the share options</p>
+</blockquote>
+<blockquote>
+<p>You can pass the hash_tags as a single (comma separated) string, or as an array.</p>
 </blockquote>
 <h3>Multi language</h3>
 <p>It will try and use the supported languages based on user's <code>browser language</code> configuration.<br>
-If the language is not found, it will uses a fallback (default english).</p>
-<p>Currently supported languages:</p>
+If the language is not found, it will use a fallback (default english).</p>
+<p>Currently, supported languages:</p>
 <ul>
 <li>cs</li>
 <li>de</li>
@@ -171,12 +182,13 @@ As your mobile device will probably have native support for the share API, it wi
 <p>And try it locally</p>
 <pre class="prettyprint source lang-sh"><code>npm run demo
 </code></pre>
+<p>And build the docs</p>
+<pre class="prettyprint source lang-sh"><code>npm run docs
+</code></pre>
 <p>Also, if you need to change the icons, they are SVGs located on the share.js script.
-You will find the oridinal vector (.svg) in the src/icons directory in case you want to change it and copy the svg code.</p>
-<h2>Donate ❤️</h2>
-<p>Buy us a coffee :)</p>
-<p>BTC: 1GuTME1bGbk7hY7ssrUBh3M1k4AeyVCSjW<br/>
-ETH: 0x49f1612d4a8e9165f2eb94be79af9dbbf3815af5</p>
+You will find the oridinal vector (.svg) in the src/icons directory in case you want to change it and copy the svg code.
+I have added a few more icons, but sadly bookmarks don't work without a extension.
+Help wanted for a more flexible icon system. but i ❤️ svg so.</p>
 <h2>Donate ❤️</h2>
 <p>Buy us a coffee :)</p>
 <p>BTC: 1GuTME1bGbk7hY7ssrUBh3M1k4AeyVCSjW<br/>
@@ -197,7 +209,7 @@ ETH: 0x49f1612d4a8e9165f2eb94be79af9dbbf3815af5</p></article>
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.10</a> on Sat Jun 11 2022 07:02:33 GMT-0700 (Pacific Daylight Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.10</a> on Sat Jun 11 2022 07:20:53 GMT-0700 (Pacific Daylight Time)
 </footer>
 
 <script> prettyPrint(); </script>
