@@ -29,8 +29,11 @@ Just import it like so:
 You can also install it using npm:
 
 ```sh
-npm install share-api-polyfill --save
 
+npm install git+https://github.com/syonfox/share-api-polyfill.git
+
+//todo merge or deploy to npm @syonfox:SharePolyfill
+npm install share-api-polyfill --save
 
 # or
 yarn add share-api-polyfill
@@ -38,9 +41,23 @@ yarn add share-api-polyfill
 
 Now, it will use the native share panel if it is available (only available on mobile devices) and, if not, it will enable an HTML structure in your page showing options for your users.
 
-Here, check this demo and see the [share api polyfill in action](https://on2-dev.github.io/share-api-polyfill/demo/).
+Here, check this demo and see the [original (legacy) share api polyfill in action](https://on2-dev.github.io/share-api-polyfill/demo/).
 
 ## The Share API
+
+I have created a version of this polyfill that creates 2 classes SharePolyfill and ShareTarget  this by default acts as a polyfill in addition to providing a default instance `sharePolyfill`
+
+end users may then add more share targets by creating one and calling
+`sharePolyfill.registerShareTarget()`
+
+[docs ShareTarget](https://syonfox.github.io/share-api-polyfill/docs/ShareTarget.html)
+
+
+if a user would like to disable native sharing they can ether reinitialize like so
+`shareTarget = newShareTarget({forcePolyfill:true})`
+alternatively one could simply override the share function
+`navigator.share = sharePolyfill.share`
+
 
 The official share api works like this:
 

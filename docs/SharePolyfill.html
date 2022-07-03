@@ -324,7 +324,7 @@ Setup a instance with custom options
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="share.js.html">share.js</a>, <a href="share.js.html#line754">line 754</a>
+        <a href="share.js.html">share.js</a>, <a href="share.js.html#line537">line 537</a>
     </li></ul></dd>
     
 
@@ -387,48 +387,6 @@ Setup a instance with custom options
 
 
 
-<div class="description">
-    https://github.com/bradvin/social-share-urls
-  return {
-    'add.this': 'http://www.addthis.com/bookmark.php?url=' + url,
-    'blogger': 'https://www.blogger.com/blog-this.g?u=' + url + '&n=' + title + '&t=' + desc,
-    'buffer': 'https://buffer.com/add?text=' + text + '&url=' + url,
-    'diaspora': 'https://share.diasporafoundation.org/?title=' + title + '&url=' + url,
-    'douban': 'http://www.douban.com/recommend/?url=' + url + '&title=' + text,
-    'email': 'mailto:' + email_address + '?subject=' + title + '&body=' + desc,
-    'evernote': 'https://www.evernote.com/clip.action?url=' + url + '&title=' + text,
-    'getpocket': 'https://getpocket.com/edit?url=' + url,
-    'facebook': 'http://www.facebook.com/sharer.php?u=' + url,
-    'flattr': 'https://flattr.com/submit/auto?user_id=' + user_id + '&url=' + url + '&title=' + title + '&description=' + text + '&language=' + language + '&tags=' + hash_tags + '&hidden=HIDDEN&category=' + category,
-    'flipboard': 'https://share.flipboard.com/bookmarklet/popout?v=2&title=' + text + '&url=' + url,
-    'gmail': 'https://mail.google.com/mail/?view=cm&to=' + email_address + '&su=' + title + '&body=' + url + '&bcc=' + bcc_email_address + '&cc=' + cc_email_address,
-    'google.bookmarks': 'https://www.google.com/bookmarks/mark?op=edit&bkmk=' + url + '&title=' + title + '&annotation=' + text + '&labels=' + hash_tags + '',
-    'instapaper': 'http://www.instapaper.com/edit?url=' + url + '&title=' + title + '&description=' + desc,
-    'line.me': 'https://lineit.line.me/share/ui?url=' + url + '&text=' + text,
-    'linkedin': 'https://www.linkedin.com/sharing/share-offsite/?url=' + url,
-    'livejournal': 'http://www.livejournal.com/update.bml?subject=' + text + '&event=' + url,
-    'hacker.news': 'https://news.ycombinator.com/submitlink?u=' + url + '&t=' + title,
-    'ok.ru': 'https://connect.ok.ru/dk?st.cmd=WidgetSharePreview&st.shareUrl=' + url,
-    'pinterest': 'http://pinterest.com/pin/create/button/?url=' + url,
-    'qzone': 'http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=' + url,
-    'reddit': 'https://reddit.com/submit?url=' + url + '&title=' + title,
-    'renren': 'http://widget.renren.com/dialog/share?resourceUrl=' + url + '&srcUrl=' + url + '&title=' + text + '&description=' + desc,
-    'skype': 'https://web.skype.com/share?url=' + url + '&text=' + text,
-    'sms': 'sms:' + phone_number + '?body=' + text,
-    'surfingbird.ru': 'http://surfingbird.ru/share?url=' + url + '&description=' + desc + '&screenshot=' + image + '&title=' + title,
-    'telegram.me': 'https://t.me/share/url?url=' + url + '&text=' + text + '&to=' + phone_number,
-    'threema': 'threema://compose?text=' + text + '&id=' + user_id,
-    'tumblr': 'https://www.tumblr.com/widgets/share/tool?canonicalUrl=' + url + '&title=' + title + '&caption=' + desc + '&tags=' + hash_tags,
-    'twitter': 'https://twitter.com/intent/tweet?url=' + url + '&text=' + text + '&via=' + via + '&hashtags=' + hash_tags,
-    'vk': 'http://vk.com/share.php?url=' + url + '&title=' + title + '&comment=' + desc,
-    'weibo': 'http://service.weibo.com/share/share.php?url=' + url + '&appkey=&title=' + title + '&pic=&ralateUid=',
-    'whatsapp': 'https://api.whatsapp.com/send?text=' + text + '%20' + url,
-    'xing': 'https://www.xing.com/spi/shares/new?url=' + url,
-    'yahoo': 'http://compose.mail.yahoo.com/?to=' + email_address + '&subject=' + title + '&body=' + text,
-  };
-}
-</div>
-
 
 
 
@@ -470,7 +428,7 @@ Setup a instance with custom options
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="share.js.html">share.js</a>, <a href="share.js.html#line522">line 522</a>
+        <a href="share.js.html">share.js</a>, <a href="share.js.html#line305">line 305</a>
     </li></ul></dd>
     
 
@@ -497,6 +455,49 @@ Setup a instance with custom options
 
 
 
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>https://github.com/bradvin/social-share-urls
+  return {
+    'add.this': 'http://www.addthis.com/bookmark.php?url=' + url,
+    'blogger': 'https://www.blogger.com/blog-this.g?u=' + url + '&amp;n=' + title + '&amp;t=' + desc,
+    'buffer': 'https://buffer.com/add?text=' + text + '&amp;url=' + url,
+    'diaspora': 'https://share.diasporafoundation.org/?title=' + title + '&amp;url=' + url,
+    'douban': 'http://www.douban.com/recommend/?url=' + url + '&amp;title=' + text,
+    'email': 'mailto:' + email_address + '?subject=' + title + '&amp;body=' + desc,
+    'evernote': 'https://www.evernote.com/clip.action?url=' + url + '&amp;title=' + text,
+    'getpocket': 'https://getpocket.com/edit?url=' + url,
+    'facebook': 'http://www.facebook.com/sharer.php?u=' + url,
+    'flattr': 'https://flattr.com/submit/auto?user_id=' + user_id + '&amp;url=' + url + '&amp;title=' + title + '&amp;description=' + text + '&amp;language=' + language + '&amp;tags=' + hash_tags + '&amp;hidden=HIDDEN&amp;category=' + category,
+    'flipboard': 'https://share.flipboard.com/bookmarklet/popout?v=2&amp;title=' + text + '&amp;url=' + url,
+    'gmail': 'https://mail.google.com/mail/?view=cm&amp;to=' + email_address + '&amp;su=' + title + '&amp;body=' + url + '&amp;bcc=' + bcc_email_address + '&amp;cc=' + cc_email_address,
+    'google.bookmarks': 'https://www.google.com/bookmarks/mark?op=edit&amp;bkmk=' + url + '&amp;title=' + title + '&amp;annotation=' + text + '&amp;labels=' + hash_tags + '',
+    'instapaper': 'http://www.instapaper.com/edit?url=' + url + '&amp;title=' + title + '&amp;description=' + desc,
+    'line.me': 'https://lineit.line.me/share/ui?url=' + url + '&amp;text=' + text,
+    'linkedin': 'https://www.linkedin.com/sharing/share-offsite/?url=' + url,
+    'livejournal': 'http://www.livejournal.com/update.bml?subject=' + text + '&amp;event=' + url,
+    'hacker.news': 'https://news.ycombinator.com/submitlink?u=' + url + '&amp;t=' + title,
+    'ok.ru': 'https://connect.ok.ru/dk?st.cmd=WidgetSharePreview&amp;st.shareUrl=' + url,
+    'pinterest': 'http://pinterest.com/pin/create/button/?url=' + url,
+    'qzone': 'http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=' + url,
+    'reddit': 'https://reddit.com/submit?url=' + url + '&amp;title=' + title,
+    'renren': 'http://widget.renren.com/dialog/share?resourceUrl=' + url + '&amp;srcUrl=' + url + '&amp;title=' + text + '&amp;description=' + desc,
+    'skype': 'https://web.skype.com/share?url=' + url + '&amp;text=' + text,
+    'sms': 'sms:' + phone_number + '?body=' + text,
+    'surfingbird.ru': 'http://surfingbird.ru/share?url=' + url + '&amp;description=' + desc + '&amp;screenshot=' + image + '&amp;title=' + title,
+    'telegram.me': 'https://t.me/share/url?url=' + url + '&amp;text=' + text + '&amp;to=' + phone_number,
+    'threema': 'threema://compose?text=' + text + '&amp;id=' + user_id,
+    'tumblr': 'https://www.tumblr.com/widgets/share/tool?canonicalUrl=' + url + '&amp;title=' + title + '&amp;caption=' + desc + '&amp;tags=' + hash_tags,
+    'twitter': 'https://twitter.com/intent/tweet?url=' + url + '&amp;text=' + text + '&amp;via=' + via + '&amp;hashtags=' + hash_tags,
+    'vk': 'http://vk.com/share.php?url=' + url + '&amp;title=' + title + '&amp;comment=' + desc,
+    'weibo': 'http://service.weibo.com/share/share.php?url=' + url + '&amp;appkey=&amp;title=' + title + '&amp;pic=&amp;ralateUid=',
+    'whatsapp': 'https://api.whatsapp.com/send?text=' + text + '%20' + url,
+    'xing': 'https://www.xing.com/spi/shares/new?url=' + url,
+    'yahoo': 'http://compose.mail.yahoo.com/?to=' + email_address + '&amp;subject=' + title + '&amp;body=' + text,
+  };
+}</code></pre>
 
 
 
@@ -762,7 +763,7 @@ This creates the share popup
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="share.js.html">share.js</a>, <a href="share.js.html#line1013">line 1013</a>
+        <a href="share.js.html">share.js</a>, <a href="share.js.html#line808">line 808</a>
     </li></ul></dd>
     
 
@@ -922,7 +923,7 @@ Register a posible url if the one you want is not provided
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="share.js.html">share.js</a>, <a href="share.js.html#line1457">line 1457</a>
+        <a href="share.js.html">share.js</a>, <a href="share.js.html#line1252">line 1252</a>
     </li></ul></dd>
     
 
@@ -947,6 +948,302 @@ Register a posible url if the one you want is not provided
 
 
 
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="share"><span class="type-signature"></span>share<span class="signature">(data, options<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Promise}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    https://developer.mozilla.org/en-US/docs/Web/API/Navigator/share
+Perform a share
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>data</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">ShareData</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">An object containing data to share
+Properties that are unknown to the user agent are ignored; share data is only assessed on properties understood by the user agent. All properties are optional but at least one known data property must be specified.
+Possible values are:
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>url</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">A string representing a URL to be shared.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>url</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">A string representing text to be shared.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>url</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">A string representing a title to be shared. May be ignored by the target.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>options</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">SharePolyfill Extended Options ignored in native more and optional</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="share.js.html">share.js</a>, <a href="share.js.html#line766">line 766</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise</span>
+
+
+    </dd>
+</dl>
+
+    
 
 
 
@@ -1090,7 +1387,7 @@ Register a posible url if the one you want is not provided
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="share.js.html">share.js</a>, <a href="share.js.html#line1441">line 1441</a>
+        <a href="share.js.html">share.js</a>, <a href="share.js.html#line1236">line 1236</a>
     </li></ul></dd>
     
 
@@ -1160,7 +1457,7 @@ Register a posible url if the one you want is not provided
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.10</a> on Sat Jun 11 2022 07:20:53 GMT-0700 (Pacific Daylight Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.10</a> on Sun Jul 03 2022 00:25:03 GMT-0700 (Pacific Daylight Time)
 </footer>
 
 <script> prettyPrint(); </script>
