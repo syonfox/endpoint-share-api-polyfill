@@ -4,10 +4,10 @@ This is a (30kb) polyfill for the `Web Share API` that can be used in desktop to
 
 It also supports multilanguage ([see the list of languages](#multi-language) and you can help us with that :) ).
 
-This is a very simple, single file import polyfill.
+This is a very simple, single file import polyfill. Simply include it in your project and use the native share api.
 
 ![JavaScript Share API Polyfill in a Browser](https://github.com/on2-dev/share-api-polyfill/blob/master/demo/demo.gif?raw=true)  
-[see the share api polyfill in action](https://on2-dev.github.io/share-api-polyfill/demo/)
+[(original/legacy) see the share api polyfill in action](https://on2-dev.github.io/share-api-polyfill/demo/)
 
 # 
 
@@ -20,6 +20,7 @@ New demos/ site
 
 Just import it like so:
 
+### legacy import (no ShareTarget)
 ```html
 <script src="https://unpkg.com/share-api-polyfill/dist/share-min.js"></script>
 ```
@@ -32,7 +33,7 @@ You can also install it using npm:
 
 npm install git+https://github.com/syonfox/share-api-polyfill.git
 
-//todo merge or deploy to npm @syonfox:SharePolyfill
+#todo merge or deploy to npm @syonfox:SharePolyfill
 npm install share-api-polyfill --save
 
 # or
