@@ -1290,7 +1290,7 @@ var sharePolyfill = new SharePolyfill();
 // navigator.share = navigator.share || sharePolyfill.share();
 
 //TODO convert all of these
-// need to be individualy retested and added to defaults.
+// need to be individualy re-tested and added to defaults.
 
 
 /*

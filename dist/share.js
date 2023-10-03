@@ -27,223 +27,6 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
 
-// All Social Media Sites
-// -------------------------------------------------
-//https://github.com/bradvin/social-share-urls
-// All Social Media Sites ~ Nice Names
-// -------------------------------------------------
-//
-// function GetSocialMediaSites_NiceNames() {
-//   return {
-//     'add.this': 'AddThis',
-//     'blogger': 'Blogger',
-//     'buffer': 'Buffer',
-//     'diaspora': 'Diaspora',
-//     'douban': 'Douban',
-//     'email': 'EMail',
-//     'evernote': 'EverNote',
-//     'getpocket': 'Pocket',
-//     'facebook': 'FaceBook',
-//     'flattr': 'Flattr',
-//     'flipboard': 'FlipBoard',
-//     'google.bookmarks': 'GoogleBookmarks',
-//     'instapaper': 'InstaPaper',
-//     'line.me': 'Line.me',
-//     'linkedin': 'LinkedIn',
-//     'livejournal': 'LiveJournal',
-//     'gmail': 'GMail',
-//     'hacker.news': 'HackerNews',
-//     'ok.ru': 'OK.ru',
-//     'pinterest': 'Pinterest',
-//     'qzone': 'QZone',
-//     'reddit': 'Reddit',
-//     'renren': 'RenRen',
-//     'skype': 'Skype',
-//     'sms': 'SMS',
-//     'surfingbird.ru': 'SurfingBird.ru',
-//     'telegram.me': 'Telegram.me',
-//     'threema': 'Threema',
-//     'tumblr': 'Tumblr',
-//     'twitter': 'Twitter',
-//     'vk': 'VK',
-//     'weibo': 'Weibo',
-//     'whatsapp': 'WhatsApp',
-//     'xing': 'Xing',
-//     'yahoo': 'Yahoo',
-//   };
-// }
-//
-// // Social Media Sites With Share Links
-// // -------------------------------------------------
-// function GetSocialMediaSites_WithShareLinks_OrderedByPopularity() {
-//   return [
-//     'google.bookmarks',
-//     'facebook',
-//     'reddit',
-//     'whatsapp',
-//     'twitter',
-//     'linkedin',
-//     'tumblr',
-//     'pinterest',
-//     'blogger',
-//     'livejournal',
-//     'evernote',
-//     'add.this',
-//     'getpocket',
-//     'hacker.news',
-//     'buffer',
-//     'flipboard',
-//     'instapaper',
-//     'surfingbird.ru',
-//     'flattr',
-//     'diaspora',
-//     'qzone',
-//     'vk',
-//     'weibo',
-//     'ok.ru',
-//     'douban',
-//     'xing',
-//     'renren',
-//     'threema',
-//     'sms',
-//     'line.me',
-//     'skype',
-//     'telegram.me',
-//     'email',
-//     'gmail',
-//     'yahoo',
-//   ];
-// }
-//
-// function GetSocialMediaSites_WithShareLinks_SyonPreferred() {
-//   return [
-//     'google.bookmarks',
-//     'telegram.me',
-//     'email',
-//     'gmail',
-//     'yahoo',
-//     'sms',
-//     'whatsapp',
-//     'twitter',
-//     'facebook',
-//     'linkedin',
-//     'threema',
-//     'line.me',
-//     'skype',
-//     'reddit',
-//     'tumblr',
-//     // 'pinterest',
-//     // 'blogger',
-//     // 'livejournal',
-//     // 'evernote',
-//     // 'add.this',
-//     // 'getpocket',
-//     // 'hacker.news',
-//     // 'buffer',
-//     //
-//     //
-//     //
-//     // 'instapaper',
-//   ];
-// }
-//
-// function GetSocialMediaSites_WithShareLinks_OrderedByAlphabet() {
-//   const nice_names = GetSocialMediaSites_NiceNames();
-//
-//   return Object.keys(nice_names);
-// }
-//
-// // Social Media Site Links With Share Links
-// // -------------------------------------------------
-// function GetSocialMediaSiteLinks_WithShareLinks(args) {
-//   const validargs = [
-//     'url',
-//     'title',
-//     'image',
-//     'desc',
-//     'appid',
-//     'redirecturl',
-//     'via',
-//     'hashtags',
-//     'provider',
-//     'language',
-//     'userid',
-//     'category',
-//     'phonenumber',
-//     'emailaddress',
-//     'cemailaddress',
-//     'bccemailaddress',
-//   ];
-//
-//   for (var i = 0; i < validargs.length; i++) {
-//     const validarg = validargs[i];
-//     if (!args[validarg]) {
-//       args[validarg] = '';
-//     }
-//   }
-//
-//   const url = fixedEncodeURIComponent(args.url);
-//   const title = fixedEncodeURIComponent(args.title);
-//   const image = fixedEncodeURIComponent(args.image);
-//   const desc = fixedEncodeURIComponent(args.desc);
-//   const app_id = fixedEncodeURIComponent(args.appid);
-//   const redirect_url = fixedEncodeURIComponent(args.redirecturl);
-//   const via = fixedEncodeURIComponent(args.via);
-//   const hash_tags = fixedEncodeURIComponent(args.hashtags);
-//   const provider = fixedEncodeURIComponent(args.provider);
-//   const language = fixedEncodeURIComponent(args.language);
-//   const user_id = fixedEncodeURIComponent(args.userid);
-//   const category = fixedEncodeURIComponent(args.category);
-//   const phone_number = fixedEncodeURIComponent(args.phonenumber);
-//   const email_address = fixedEncodeURIComponent(args.emailaddress);
-//   const cc_email_address = fixedEncodeURIComponent(args.ccemailaddress);
-//   const bcc_email_address = fixedEncodeURIComponent(args.bccemailaddress);
-//
-//   var text = title;
-//
-//   if (desc) {
-//     text += '%20%3A%20';	// This is just this, " : "
-//     text += desc;
-//   }
-//
-//   return {
-//     'add.this': 'http://www.addthis.com/bookmark.php?url=' + url,
-//     'blogger': 'https://www.blogger.com/blog-this.g?u=' + url + '&n=' + title + '&t=' + desc,
-//     'buffer': 'https://buffer.com/add?text=' + text + '&url=' + url,
-//     'diaspora': 'https://share.diasporafoundation.org/?title=' + title + '&url=' + url,
-//     'douban': 'http://www.douban.com/recommend/?url=' + url + '&title=' + text,
-//     'email': 'mailto:' + email_address + '?subject=' + title + '&body=' + desc,
-//     'evernote': 'https://www.evernote.com/clip.action?url=' + url + '&title=' + text,
-//     'getpocket': 'https://getpocket.com/edit?url=' + url,
-//     'facebook': 'http://www.facebook.com/sharer.php?u=' + url,
-//     'flattr': 'https://flattr.com/submit/auto?user_id=' + user_id + '&url=' + url + '&title=' + title + '&description=' + text + '&language=' + language + '&tags=' + hash_tags + '&hidden=HIDDEN&category=' + category,
-//     'flipboard': 'https://share.flipboard.com/bookmarklet/popout?v=2&title=' + text + '&url=' + url,
-//     'gmail': 'https://mail.google.com/mail/?view=cm&to=' + email_address + '&su=' + title + '&body=' + url + '&bcc=' + bcc_email_address + '&cc=' + cc_email_address,
-//     'google.bookmarks': 'https://www.google.com/bookmarks/mark?op=edit&bkmk=' + url + '&title=' + title + '&annotation=' + text + '&labels=' + hash_tags + '',
-//     'instapaper': 'http://www.instapaper.com/edit?url=' + url + '&title=' + title + '&description=' + desc,
-//     'line.me': 'https://lineit.line.me/share/ui?url=' + url + '&text=' + text,
-//     'linkedin': 'https://www.linkedin.com/sharing/share-offsite/?url=' + url,
-//     'livejournal': 'http://www.livejournal.com/update.bml?subject=' + text + '&event=' + url,
-//     'hacker.news': 'https://news.ycombinator.com/submitlink?u=' + url + '&t=' + title,
-//     'ok.ru': 'https://connect.ok.ru/dk?st.cmd=WidgetSharePreview&st.shareUrl=' + url,
-//     'pinterest': 'http://pinterest.com/pin/create/button/?url=' + url,
-//     'qzone': 'http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=' + url,
-//     'reddit': 'https://reddit.com/submit?url=' + url + '&title=' + title,
-//     'renren': 'http://widget.renren.com/dialog/share?resourceUrl=' + url + '&srcUrl=' + url + '&title=' + text + '&description=' + desc,
-//     'skype': 'https://web.skype.com/share?url=' + url + '&text=' + text,
-//     'sms': 'sms:' + phone_number + '?body=' + text,
-//     'surfingbird.ru': 'http://surfingbird.ru/share?url=' + url + '&description=' + desc + '&screenshot=' + image + '&title=' + title,
-//     'telegram.me': 'https://t.me/share/url?url=' + url + '&text=' + text + '&to=' + phone_number,
-//     'threema': 'threema://compose?text=' + text + '&id=' + user_id,
-//     'tumblr': 'https://www.tumblr.com/widgets/share/tool?canonicalUrl=' + url + '&title=' + title + '&caption=' + desc + '&tags=' + hash_tags,
-//     'twitter': 'https://twitter.com/intent/tweet?url=' + url + '&text=' + text + '&via=' + via + '&hashtags=' + hash_tags,
-//     'vk': 'http://vk.com/share.php?url=' + url + '&title=' + title + '&comment=' + desc,
-//     'weibo': 'http://service.weibo.com/share/share.php?url=' + url + '&appkey=&title=' + title + '&pic=&ralateUid=',
-//     'whatsapp': 'https://api.whatsapp.com/send?text=' + text + '%20' + url,
-//     'xing': 'https://www.xing.com/spi/shares/new?url=' + url,
-//     'yahoo': 'http://compose.mail.yahoo.com/?to=' + email_address + '&subject=' + title + '&body=' + text,
-//   };
-// }
 function fixedEncodeURIComponent(str) {
   return encodeURIComponent(str).replace(/[!'()*]/g, function (c) {
     return '%' + c.charCodeAt(0).toString(16);
@@ -693,6 +476,19 @@ var SharePolyfill = /*#__PURE__*/function () {
       'pinterest': '<svg class="the-icon" width="256px" height="256px" viewBox="0 0 256 256" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid"><path d="M0,128.002 C0,180.416 31.518,225.444 76.619,245.241 C76.259,236.303 76.555,225.573 78.847,215.848 C81.308,205.457 95.317,146.1 95.317,146.1 C95.317,146.1 91.228,137.927 91.228,125.848 C91.228,106.879 102.222,92.712 115.914,92.712 C127.557,92.712 133.182,101.457 133.182,111.929 C133.182,123.633 125.717,141.14 121.878,157.355 C118.671,170.933 128.686,182.008 142.081,182.008 C166.333,182.008 182.667,150.859 182.667,113.953 C182.667,85.899 163.772,64.901 129.405,64.901 C90.577,64.901 66.388,93.857 66.388,126.201 C66.388,137.353 69.676,145.217 74.826,151.307 C77.194,154.104 77.523,155.229 76.666,158.441 C76.052,160.796 74.642,166.466 74.058,168.713 C73.206,171.955 70.579,173.114 67.649,171.917 C49.765,164.616 41.436,145.031 41.436,123.015 C41.436,86.654 72.102,43.054 132.918,43.054 C181.788,43.054 213.953,78.418 213.953,116.379 C213.953,166.592 186.037,204.105 144.887,204.105 C131.068,204.105 118.069,196.635 113.616,188.15 C113.616,188.15 106.185,217.642 104.611,223.337 C101.897,233.206 96.585,243.07 91.728,250.758 C103.24,254.156 115.401,256.007 128.005,256.007 C198.689,256.007 256.001,198.698 256.001,128.002 C256.001,57.309 198.689,0 128.005,0 C57.314,0 0,57.309 0,128.002 Z" fill="#CB1F27"></path></svg>'
     }; //so that this is always available in share function
 
+    /**
+     * https://developer.mozilla.org/en-US/docs/Web/API/Navigator/share
+     * Perform a share
+     * @param {ShareData} data - An object containing data to share
+     * Properties that are unknown to the user agent are ignored; share data is only assessed on properties understood by the user agent. All properties are optional but at least one known data property must be specified.
+     * Possible values are:
+     * @param {string} data.url - A string representing a URL to be shared.
+     * @param {string} data.url - A string representing text to be shared.
+     * @param {string} data.url - A string representing a title to be shared. May be ignored by the target.
+     * @param {Object} [options] - SharePolyfill Extended Options ignored in native more and optional
+     * @return {Promise}
+     */
+
     this.share = function (data, options) {
       return _this._share(data, options);
     };
@@ -1041,6 +837,7 @@ var SharePolyfill = /*#__PURE__*/function () {
     key: "getDefaultShareTargets",
     value:
     /**
+     * @example
      * https://github.com/bradvin/social-share-urls
      *   return {
      *     'add.this': 'http://www.addthis.com/bookmark.php?url=' + url,
@@ -1198,7 +995,7 @@ var SharePolyfill = /*#__PURE__*/function () {
           params: {
             url: 'url',
             text: 'text',
-            phone_number: 'phone_number' // hash_tags: 'hashtags'
+            phone_number: 'to' // hash_tags: 'hashtags'
 
           }
         }
@@ -1266,6 +1063,38 @@ var SharePolyfill = /*#__PURE__*/function () {
 
   return SharePolyfill;
 }();
+/**
+ * This will setup the polyfill with default options. So it will only use the polyfill if navigator.share does not exist
+ *
+ * You can still use sharePolyfill.share();
+ *
+ * or initalize with sharePolyfill = new SharePolyfill({forcePolyfill:true});
+ *
+ * equivalently navigator.share = sharePolyfill.share;
+ *
+ * happy hacking
+ * @type {SharePolyfill}
+ *
+ * @example
+ *
+ * //minimal
+ * navigator.share({
+ *   title: 'SGOL'
+ *   text: 'One For all All For One'
+ *   url: 'https://sharedgoalof.life'
+ * })
+ *
+ * //advanced
+ * sharePolyfill.
+ *
+ *
+ */
+
+
+var sharePolyfill = new SharePolyfill(); // navigator.share = navigator.share || sharePolyfill.share();
+//TODO convert all of these
+// need to be individualy retested and added to defaults.
+
 /*
 
   // Cleaned up icons from material UI and Fontawsome
@@ -1386,36 +1215,223 @@ var SharePolyfill = /*#__PURE__*/function () {
 }());
 
 */
-
-/**
- * This will setup the polyfill with default options. So it will only use the polyfill if navigator.share does not exist
- *
- * You can still use sharePolyfill.share();
- *
- * or initalize with sharePolyfill = new SharePolyfill({forcePolyfill:true});
- *
- * equivalently navigator.share = sharePolyfill.share;
- *
- * happy hacking
- * @type {SharePolyfill}
- *
- * @example
- *
- * //minimal
- * navigator.share({
- *   title: 'SGOL'
- *   text: 'One For all All For One'
- *   url: 'https://sharedgoalof.life'
- * })
- *
- * //advanced
- * sharePolyfill.
- *
- *
- */
-
-
-var sharePolyfill = new SharePolyfill(); // navigator.share = navigator.share || navigator.sharePolyfill;
+// All Social Media Sites
+// -------------------------------------------------
+//https://github.com/bradvin/social-share-urls
+// All Social Media Sites ~ Nice Names
+// -------------------------------------------------
+//
+// function GetSocialMediaSites_NiceNames() {
+//   return {
+//     'add.this': 'AddThis',
+//     'blogger': 'Blogger',
+//     'buffer': 'Buffer',
+//     'diaspora': 'Diaspora',
+//     'douban': 'Douban',
+//     'email': 'EMail',
+//     'evernote': 'EverNote',
+//     'getpocket': 'Pocket',
+//     'facebook': 'FaceBook',
+//     'flattr': 'Flattr',
+//     'flipboard': 'FlipBoard',
+//     'google.bookmarks': 'GoogleBookmarks',
+//     'instapaper': 'InstaPaper',
+//     'line.me': 'Line.me',
+//     'linkedin': 'LinkedIn',
+//     'livejournal': 'LiveJournal',
+//     'gmail': 'GMail',
+//     'hacker.news': 'HackerNews',
+//     'ok.ru': 'OK.ru',
+//     'pinterest': 'Pinterest',
+//     'qzone': 'QZone',
+//     'reddit': 'Reddit',
+//     'renren': 'RenRen',
+//     'skype': 'Skype',
+//     'sms': 'SMS',
+//     'surfingbird.ru': 'SurfingBird.ru',
+//     'telegram.me': 'Telegram.me',
+//     'threema': 'Threema',
+//     'tumblr': 'Tumblr',
+//     'twitter': 'Twitter',
+//     'vk': 'VK',
+//     'weibo': 'Weibo',
+//     'whatsapp': 'WhatsApp',
+//     'xing': 'Xing',
+//     'yahoo': 'Yahoo',
+//   };
+// }
+//
+// // Social Media Sites With Share Links
+// // -------------------------------------------------
+// function GetSocialMediaSites_WithShareLinks_OrderedByPopularity() {
+//   return [
+//     'google.bookmarks',
+//     'facebook',
+//     'reddit',
+//     'whatsapp',
+//     'twitter',
+//     'linkedin',
+//     'tumblr',
+//     'pinterest',
+//     'blogger',
+//     'livejournal',
+//     'evernote',
+//     'add.this',
+//     'getpocket',
+//     'hacker.news',
+//     'buffer',
+//     'flipboard',
+//     'instapaper',
+//     'surfingbird.ru',
+//     'flattr',
+//     'diaspora',
+//     'qzone',
+//     'vk',
+//     'weibo',
+//     'ok.ru',
+//     'douban',
+//     'xing',
+//     'renren',
+//     'threema',
+//     'sms',
+//     'line.me',
+//     'skype',
+//     'telegram.me',
+//     'email',
+//     'gmail',
+//     'yahoo',
+//   ];
+// }
+//
+// function GetSocialMediaSites_WithShareLinks_SyonPreferred() {
+//   return [
+//     'google.bookmarks',
+//     'telegram.me',
+//     'email',
+//     'gmail',
+//     'yahoo',
+//     'sms',
+//     'whatsapp',
+//     'twitter',
+//     'facebook',
+//     'linkedin',
+//     'threema',
+//     'line.me',
+//     'skype',
+//     'reddit',
+//     'tumblr',
+//     // 'pinterest',
+//     // 'blogger',
+//     // 'livejournal',
+//     // 'evernote',
+//     // 'add.this',
+//     // 'getpocket',
+//     // 'hacker.news',
+//     // 'buffer',
+//     //
+//     //
+//     //
+//     // 'instapaper',
+//   ];
+// }
+//
+// function GetSocialMediaSites_WithShareLinks_OrderedByAlphabet() {
+//   const nice_names = GetSocialMediaSites_NiceNames();
+//
+//   return Object.keys(nice_names);
+// }
+//
+// // Social Media Site Links With Share Links
+// // -------------------------------------------------
+// function GetSocialMediaSiteLinks_WithShareLinks(args) {
+//   const validargs = [
+//     'url',
+//     'title',
+//     'image',
+//     'desc',
+//     'appid',
+//     'redirecturl',
+//     'via',
+//     'hashtags',
+//     'provider',
+//     'language',
+//     'userid',
+//     'category',
+//     'phonenumber',
+//     'emailaddress',
+//     'cemailaddress',
+//     'bccemailaddress',
+//   ];
+//
+//   for (var i = 0; i < validargs.length; i++) {
+//     const validarg = validargs[i];
+//     if (!args[validarg]) {
+//       args[validarg] = '';
+//     }
+//   }
+//
+//   const url = fixedEncodeURIComponent(args.url);
+//   const title = fixedEncodeURIComponent(args.title);
+//   const image = fixedEncodeURIComponent(args.image);
+//   const desc = fixedEncodeURIComponent(args.desc);
+//   const app_id = fixedEncodeURIComponent(args.appid);
+//   const redirect_url = fixedEncodeURIComponent(args.redirecturl);
+//   const via = fixedEncodeURIComponent(args.via);
+//   const hash_tags = fixedEncodeURIComponent(args.hashtags);
+//   const provider = fixedEncodeURIComponent(args.provider);
+//   const language = fixedEncodeURIComponent(args.language);
+//   const user_id = fixedEncodeURIComponent(args.userid);
+//   const category = fixedEncodeURIComponent(args.category);
+//   const phone_number = fixedEncodeURIComponent(args.phonenumber);
+//   const email_address = fixedEncodeURIComponent(args.emailaddress);
+//   const cc_email_address = fixedEncodeURIComponent(args.ccemailaddress);
+//   const bcc_email_address = fixedEncodeURIComponent(args.bccemailaddress);
+//
+//   var text = title;
+//
+//   if (desc) {
+//     text += '%20%3A%20';	// This is just this, " : "
+//     text += desc;
+//   }
+//
+//   return {
+//     'add.this': 'http://www.addthis.com/bookmark.php?url=' + url,
+//     'blogger': 'https://www.blogger.com/blog-this.g?u=' + url + '&n=' + title + '&t=' + desc,
+//     'buffer': 'https://buffer.com/add?text=' + text + '&url=' + url,
+//     'diaspora': 'https://share.diasporafoundation.org/?title=' + title + '&url=' + url,
+//     'douban': 'http://www.douban.com/recommend/?url=' + url + '&title=' + text,
+//     'email': 'mailto:' + email_address + '?subject=' + title + '&body=' + desc,
+//     'evernote': 'https://www.evernote.com/clip.action?url=' + url + '&title=' + text,
+//     'getpocket': 'https://getpocket.com/edit?url=' + url,
+//     'facebook': 'http://www.facebook.com/sharer.php?u=' + url,
+//     'flattr': 'https://flattr.com/submit/auto?user_id=' + user_id + '&url=' + url + '&title=' + title + '&description=' + text + '&language=' + language + '&tags=' + hash_tags + '&hidden=HIDDEN&category=' + category,
+//     'flipboard': 'https://share.flipboard.com/bookmarklet/popout?v=2&title=' + text + '&url=' + url,
+//     'gmail': 'https://mail.google.com/mail/?view=cm&to=' + email_address + '&su=' + title + '&body=' + url + '&bcc=' + bcc_email_address + '&cc=' + cc_email_address,
+//     'google.bookmarks': 'https://www.google.com/bookmarks/mark?op=edit&bkmk=' + url + '&title=' + title + '&annotation=' + text + '&labels=' + hash_tags + '',
+//     'instapaper': 'http://www.instapaper.com/edit?url=' + url + '&title=' + title + '&description=' + desc,
+//     'line.me': 'https://lineit.line.me/share/ui?url=' + url + '&text=' + text,
+//     'linkedin': 'https://www.linkedin.com/sharing/share-offsite/?url=' + url,
+//     'livejournal': 'http://www.livejournal.com/update.bml?subject=' + text + '&event=' + url,
+//     'hacker.news': 'https://news.ycombinator.com/submitlink?u=' + url + '&t=' + title,
+//     'ok.ru': 'https://connect.ok.ru/dk?st.cmd=WidgetSharePreview&st.shareUrl=' + url,
+//     'pinterest': 'http://pinterest.com/pin/create/button/?url=' + url,
+//     'qzone': 'http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=' + url,
+//     'reddit': 'https://reddit.com/submit?url=' + url + '&title=' + title,
+//     'renren': 'http://widget.renren.com/dialog/share?resourceUrl=' + url + '&srcUrl=' + url + '&title=' + text + '&description=' + desc,
+//     'skype': 'https://web.skype.com/share?url=' + url + '&text=' + text,
+//     'sms': 'sms:' + phone_number + '?body=' + text,
+//     'surfingbird.ru': 'http://surfingbird.ru/share?url=' + url + '&description=' + desc + '&screenshot=' + image + '&title=' + title,
+//     'telegram.me': 'https://t.me/share/url?url=' + url + '&text=' + text + '&to=' + phone_number,
+//     'threema': 'threema://compose?text=' + text + '&id=' + user_id,
+//     'tumblr': 'https://www.tumblr.com/widgets/share/tool?canonicalUrl=' + url + '&title=' + title + '&caption=' + desc + '&tags=' + hash_tags,
+//     'twitter': 'https://twitter.com/intent/tweet?url=' + url + '&text=' + text + '&via=' + via + '&hashtags=' + hash_tags,
+//     'vk': 'http://vk.com/share.php?url=' + url + '&title=' + title + '&comment=' + desc,
+//     'weibo': 'http://service.weibo.com/share/share.php?url=' + url + '&appkey=&title=' + title + '&pic=&ralateUid=',
+//     'whatsapp': 'https://api.whatsapp.com/send?text=' + text + '%20' + url,
+//     'xing': 'https://www.xing.com/spi/shares/new?url=' + url,
+//     'yahoo': 'http://compose.mail.yahoo.com/?to=' + email_address + '&subject=' + title + '&body=' + text,
+//   };
+// }
 
 /***/ }),
 
