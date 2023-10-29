@@ -6,8 +6,8 @@ It also supports multilanguage ([see the list of languages](#multi-language) and
 
 This is a very simple, single file import polyfill. Simply include it in your project and use the native share api.
 
-![JavaScript Share API Polyfill in a Browser](https://github.com/on2-dev/share-api-polyfill/blob/master/demo/demo.gif?raw=true)  
-[(original/legacy) see the share api polyfill in action](https://on2-dev.github.io/share-api-polyfill/demo/)
+![JavaScript Share API Polyfill in a Browser](https://github.com/syonfox/share-api-polyfill/blob/master/demo/demo.gif?raw=true)  
+[(original/legacy) see the share api polyfill in action](https://syonfox.github.io/share-api-polyfill/demo/)
 
 # 
 
@@ -42,7 +42,7 @@ yarn add share-api-polyfill
 
 Now, it will use the native share panel if it is available (only available on mobile devices) and, if not, it will enable an HTML structure in your page showing options for your users.
 
-Here, check this demo and see the [original (legacy) share api polyfill in action](https://on2-dev.github.io/share-api-polyfill/demo/).
+Here, check this demo and see the [original (legacy) share api polyfill in action](https://syonfox.github.io/share-api-polyfill/demo/).
 
 ## The Share API
 
@@ -174,7 +174,7 @@ navigator.share({
 
 Yup, it's open source and you can contribute to it :)
 
-Please refer to our [CONTRIBUTING.md](https://github.com/on2-dev/share-api-polyfill/blob/master/CONTRIBUTING.md) and help us improve this tool.
+Please refer to our [CONTRIBUTING.md](https://github.com/syonfox/share-api-polyfill/blob/master/CONTRIBUTING.md) and help us improve this tool.
 
 To re-build id, just install the dependencies:
 
