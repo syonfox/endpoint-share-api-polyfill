@@ -1,4 +1,20 @@
-# Share API Polyfill
+# ENDpoint Share API Polyfill
+
+This is the primary fork for all endpoint systems to use
+
+We are a canadian companycreating enterprise maping software. 
+
+This is a basic feature that should have 0 dependancies and work everywhere to suport a nice sharing experiance
+
+it should remain indapendant but is only one peice of a bigure puzzle
+
+
+DEMO:
+https://syonfox.github.io/endpoint-share-api-polyfill/demo/index2.html
+
+DOCS:
+https://syonfox.github.io/endpoint-share-api-polyfill/docs
+
 
 This is a (30kb) polyfill for the `Web Share API` that can be used in desktop too, so your users can share in their twitter, facebook, messenger, linkedin, sms, e-mail, print, telegram or whatsapp.
 
