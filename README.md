@@ -23,22 +23,14 @@ It also supports multilanguage ([see the list of languages](#multi-language) and
 This is a very simple, single file import polyfill. Simply include it in your project and use the native share api.
 
 ![JavaScript Share API Polyfill in a Browser](https://github.com/syonfox/share-api-polyfill/blob/master/demo/demo.gif?raw=true)  
-[(original/legacy) see the share api polyfill in action](https://syonfox.github.io/share-api-polyfill/demo/)
 
-# 
-
-New demos/ site
-
-[New Demo Page](https://syonfox.github.io/share-api-polyfill/demo)
-
-[New Docs Page](https://syonfox.github.io/share-api-polyfill/docs)
 ## Installing it:
 
 Just import it like so:
 
 ### legacy import (no ShareTarget)
 ```html
-<script src="https://unpkg.com/share-api-polyfill/dist/share-min.js"></script>
+<script src="https://unpkg.com/share-api-polyfill/dist/share-min.umd.js"></script>
 ```
 
 > Note that we are using the unpkg cdn to load it, you could also save it in your own structure so you can cache it with service workers and have it "close" to your own domain.
@@ -50,10 +42,10 @@ You can also install it using npm:
 npm install git+https://github.com/syonfox/share-api-polyfill.git
 
 #todo merge or deploy to npm @syonfox:SharePolyfill
-npm install share-api-polyfill --save
+npm install endpoint-share-api-polyfill
 
 # or
-yarn add share-api-polyfill
+yarn add endpoint-share-api-polyfill
 ```
 
 Now, it will use the native share panel if it is available (only available on mobile devices) and, if not, it will enable an HTML structure in your page showing options for your users.
