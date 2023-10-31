@@ -723,6 +723,22 @@ class SharePolyfill {
         email: 'E-mail',
         selectSms: 'Válasszon egy kontaktot'
       },
+      hi: {
+        shareTitle: 'शेयर करें',
+        cancel: 'रद्द करें',
+        copy: 'कॉपी करें',
+        print: 'प्रिंट करें',
+        email: 'ईमेल',
+        selectSms: 'संपर्क चुनें'
+      },
+      be: {
+        shareTitle: 'শেয়ার করুন',
+        cancel: 'বাতিল করুন',
+        copy: 'কপি করুন',
+        print: 'প্রিন্ট করুন',
+        email: 'ই মেইল',
+        selectSms: 'পরিচিতি নির্বাচন করুন'
+      }
     };
 
     this.android = navigator.userAgent.match(/Android/i);
