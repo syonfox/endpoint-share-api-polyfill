@@ -982,6 +982,9 @@ class SharePolyfill {
 .shareAPIPolyfill-icons-container .hidden {
   display: none !important;
 }
+.shareAPIPolyfill-icons-container button {
+    margin: 0px;
+}
 `);
 
       function closeShareUI() {
